@@ -44,30 +44,99 @@ The InfluxDB MCP Server exposes a set of tools for interacting with InfluxDB tim
 - **list_databases**
   - Lists all accessible databases.
   - Parameters: _None_
+  - ##### Example
+    ```json
+    {
+      "tool_name": "list_databases"
+    }
+    ```
 
 - **list_measurements**
   - Lists all measurements (the equivalent of tables) in a specified database.
   - Parameters: `database_name` (string, required)
+  - ##### Example
+    ```json
+    {
+      "tool_name": "list_measurements",
+      "parameters": {
+        "database_name": "telegraf"
+      }
+    }
+    ```
 
 - **get_measurement_schema**
   - Retrieves the schema for a measurement (fields, tags, and their types).
   - Parameters: `database_name` (string, required), `measurement_name` (string, required)
+  - ##### Example
+    ```json
+    {
+      "tool_name": "get_measurement_schema",
+      "parameters": {
+        "database_name": "telegraf",
+        "measurement_name": "cpu"
+      }
+    }
+    ```
 
 - **execute_influxql**
   - Executes a read-only InfluxQL query (`SELECT`, `SHOW`).
   - Parameters: `influxql_query` (string, required), `database_name` (string, optional)
+  - ##### Example
+    ```json
+    {
+      "tool_name": "execute_influxql",
+      "parameters": {
+        "database_name": "telegraf",
+        "influxql_query": "SELECT \"usage_user\" FROM \"cpu\" WHERE time > now() - 1h"
+      }
+    }
+    ```
 
 - **get_last_data_point_timestamp**
   - Retrieves the timestamp of the most recent data point in a given measurement.
   - Parameters: `database_name` (string, required), `measurement_name` (string, required)
+  - ##### Example
+    ```json
+    {
+      "tool_name": "get_last_data_point_timestamp",
+      "parameters": {
+        "database_name": "telegraf",
+        "measurement_name": "cpu"
+      }
+    }
+    ```
 
 - **get_tag_values**
   - Retrieves a list of all unique values for a specific tag key within a measurement.
   - Parameters: `database_name` (string, required), `measurement_name` (string, required), `tag_key` (string, required)
+  - ##### Example
+    ```json
+    {
+      "tool_name": "get_tag_values",
+      "parameters": {
+        "database_name": "telegraf",
+        "measurement_name": "cpu",
+        "tag_key": "cpu"
+      }
+    }
+    ```
 
 - **get_time_window_summary**
   - Calculates summary statistics (mean, max, min, 95th percentile) for a field over a specified time window.
   - Parameters: `database_name` (string, required), `measurement_name` (string, required), `field_key` (string, required), `time_window` (string, required), `filters` (string, optional), `group_by_tags` (string, optional)
+  - ##### Example
+    ```json
+    {
+      "tool_name": "get_time_window_summary",
+      "parameters": {
+        "database_name": "telegraf",
+        "measurement_name": "cpu",
+        "field_key": "usage_user",
+        "time_window": "1h",
+        "group_by_tags": "cpu"
+      }
+    }
+    ```
   
 ---
 
