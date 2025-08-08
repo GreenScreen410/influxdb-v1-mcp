@@ -1,3 +1,5 @@
+[![MCP Badge](https://lobehub.com/badge/mcp/greenscreen410-influxdb-v1-mcp)](https://lobehub.com/mcp/greenscreen410-influxdb-v1-mcp)
+
 # ⚠️ WARNING: Experimental project
 
 This project is **very unstable** and subject to breaking changes. **Do NOT use in production.**
