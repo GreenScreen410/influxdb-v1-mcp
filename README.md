@@ -1,3 +1,12 @@
+> ⚠️ WARNING: Experimental project  
+> This project is unstable and subject to breaking changes. Do NOT use in production.
+> - Target: InfluxDB v1.x only. For new work, we strongly recommend InfluxDB v3 and official tooling.
+> - No stability or data-safety guarantees. Use at your own risk.
+> - APIs, tool names, and behavior may change without notice.
+> - Limited test coverage; issues are expected.
+> - If you must try it, run against disposable data and a non-critical environment.
+> - The code and information in this repository may be inaccurate and may not work as intended.
+
 # InfluxDB-v1-MCP: The MCP Server for InfluxDB v1.x
 
 InfluxDB-v1-MCP is a powerful Model Context Protocol (MCP) interface **specifically designed for InfluxDB v1.x**, enabling AI assistants to intelligently manage and query time-series databases. Going beyond simple data retrieval, this server provides a complete toolkit that allows an AI agent to autonomously explore the database structure, understand data schemas, and execute complex InfluxQL queries.
